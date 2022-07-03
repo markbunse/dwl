@@ -1,8 +1,8 @@
-Mark's build of dwl
+dwl - dwm for Wayland
 
-Copyright © 2022 Mark Bunse
+Copyright © 2020 dwl team
 
-See also the files LICENSE.dwl, LICENSE.tinywl, LICENSE.dwm and LICENSE.sway.
+See also the files LICENSE.tinywl, LICENSE.dwm and LICENSE.sway.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -14,7 +14,7 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
----
+----
 
                     GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
