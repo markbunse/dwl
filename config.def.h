@@ -31,6 +31,7 @@ static const Layout layouts[] = {
 	{ "[M]",      monocle },
  	{ "[@]",      spiral },
  	{ "[\\]",      dwindle },
+ 	{ "HHH",      grid },
 };
 
 /* monitors */
@@ -127,9 +128,11 @@ static const Key keys[] = {
 	{ MODKEY,                    XKB_KEY_Tab,        view,           {0} },
 	{ MODKEY,                    XKB_KEY_q,          killclient,     {0} },
 	{ MODKEY,                    XKB_KEY_t,          setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                    XKB_KEY_e,          setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                    XKB_KEY_s,          setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,                    XKB_KEY_y,          setlayout,      {.v = &layouts[1]} },
+	{ MODKEY,                    XKB_KEY_u,          setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                    XKB_KEY_r,          setlayout,      {.v = &layouts[3]} },
+	{ MODKEY,                    XKB_KEY_i,          setlayout,      {.v = &layouts[4]} },
+ 	{ MODKEY,                    XKB_KEY_o,          setlayout,      {.v = &layouts[5]} },
 	{ MODKEY,                    XKB_KEY_space,      setlayout,      {0} },
         { MODKEY,                    XKB_KEY_g,          togglegaps,     {0} },
  	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_G,          defaultgaps,    {0} },
