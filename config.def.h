@@ -50,7 +50,7 @@ static const struct xkb_rule_names xkb_rules = {
 	/* example:
 	.options = "ctrl:nocaps",
 	*/
-	.options = NULL,
+	.options = "ctrl:nocaps",
 };
 
 static const int repeat_rate = 25;
@@ -92,6 +92,7 @@ LIBINPUT_CONFIG_ACCEL_PROFILE_ADAPTIVE
 */
 static const enum libinput_config_accel_profile accel_profile = LIBINPUT_CONFIG_ACCEL_PROFILE_ADAPTIVE;
 static const double accel_speed = 0.0;
+static const int cursor_timeout = 5;
 
 /* If you want to use the windows key change this to WLR_MODIFIER_LOGO */
 #define MODKEY WLR_MODIFIER_LOGO
