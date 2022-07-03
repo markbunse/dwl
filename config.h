@@ -50,7 +50,10 @@ static const struct xkb_rule_names xkb_rules = {
 	/* example:
 	.options = "ctrl:nocaps",
 	*/
-	.options = "ctrl:nocaps",
+        .layout = "de,us",
+        .variant = "qwerty,",
+        .model = "pc105",
+	.options = "grp:alt_shift_toggle,caps:swapescape,terminate:ctrl_alt_bksp",
 };
 
 static const int repeat_rate = 25;
@@ -60,7 +63,7 @@ static const int repeat_delay = 600;
 static const int tap_to_click = 1;
 static const int tap_and_drag = 1;
 static const int drag_lock = 1;
-static const int natural_scrolling = 0;
+static const int natural_scrolling = 1;
 static const int disable_while_typing = 1;
 static const int left_handed = 0;
 static const int middle_button_emulation = 0;
@@ -117,8 +120,10 @@ static const Key keys[] = {
 	{ MODKEY,                    XKB_KEY_Return,     spawn,          {.v = termcmd} },
 	{ MODKEY,                    XKB_KEY_j,          focusstack,     {.i = +1} },
 	{ MODKEY,                    XKB_KEY_k,          focusstack,     {.i = -1} },
-	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_K,          incnmaster,     {.i = +1} },
-	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_J,          incnmaster,     {.i = -1} },
+        { MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_J,          movestack,      {.i = +1} },
+        { MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_K,          movestack,      {.i = -1} },
+	{ MODKEY,                    XKB_KEY_m,          incnmaster,     {.i = +1} },
+	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_M,          incnmaster,     {.i = -1} },
  	{ MODKEY,                    XKB_KEY_v,          incgaps,       {.i = +5 } },
  	{ MODKEY,                    XKB_KEY_b,          incgaps,       {.i = -5 } },
 	{ MODKEY,                    XKB_KEY_p,          spawn,          {.v = (const char*[]){"passmenu", NULL}} },
