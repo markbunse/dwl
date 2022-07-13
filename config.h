@@ -97,6 +97,17 @@ static const enum libinput_config_accel_profile accel_profile = LIBINPUT_CONFIG_
 static const double accel_speed = 0.0;
 static const int cursor_timeout = 5;
 
+/* Autostart */
+static const char *const autostart[] = {
+        "sh", "-c", "swaybg --image /home/mark/.config/wall.jpg", NULL,
+        "someblocks", NULL,
+        "sh", "-c", "udiskie -t", NULL,
+        "dunst", NULL,
+        "cronie", NULL,
+        NULL /* terminate */
+};
+
+
 /* If you want to use the windows key change this to WLR_MODIFIER_LOGO */
 #define MODKEY WLR_MODIFIER_LOGO
 #define TAGKEYS(KEY,SKEY,TAG) \
@@ -126,8 +137,10 @@ static const Key keys[] = {
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_M,          incnmaster,     {.i = -1} },
  	{ MODKEY,                    XKB_KEY_v,          incgaps,       {.i = +5 } },
  	{ MODKEY,                    XKB_KEY_b,          incgaps,       {.i = -5 } },
-	{ MODKEY,                    XKB_KEY_p,          spawn,          {.v = (const char*[]){"passmenu", NULL}} },
+	{ MODKEY,                    XKB_KEY_p,          spawn,          {.v = (const char*[]){"bassmenu", NULL}} },
+	{ MODKEY,                    XKB_KEY_e,          spawn,          {.v = (const char*[]){"bemenunicode", NULL}} },
 	{ MODKEY,                    XKB_KEY_w,          spawn,          {.v = (const char*[]){"firejail", "qutebrowser", NULL}} },
+	{ MODKEY,                    XKB_KEY_n,          spawn,          {.v = (const char*[]){"/bin/zsh", "-c", "kitty --listen-on=unix:/tmp/kitty --single-instance -e nnn -a", NULL}} },
 	{ MODKEY,                    XKB_KEY_h,          setmfact,       {.f = -0.05} },
 	{ MODKEY,                    XKB_KEY_l,          setmfact,       {.f = +0.05} },
 	{ MODKEY,                    XKB_KEY_Return,     zoom,           {0} },
